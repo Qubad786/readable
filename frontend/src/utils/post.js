@@ -1,4 +1,4 @@
-import sortBy from 'sort-by'
+import sortBy from 'sort-by';
 
 export const sortPosts = (posts, sortOrder) => {
   switch (sortOrder) {

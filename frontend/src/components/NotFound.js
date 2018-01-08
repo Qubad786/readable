@@ -1,5 +1,5 @@
-import React from 'react'
-import { Grid, Item } from 'semantic-ui-react'
+import React from 'react';
+import { Grid, Item } from 'semantic-ui-react';
 
 function NotFound (props) {
   const { title } = props

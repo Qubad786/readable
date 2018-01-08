@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Comment, Button } from 'semantic-ui-react';
 import moment from 'moment';
-import { getPost, deleteComment } from '../actions'
+import { getPost, deleteComment } from '../actions';
 import Vote from './Vote';
-import CommentModalForm from './CommentModalForm'
-import ConfirmModal from './ConfirmModal'
+import CommentModalForm from './CommentModalForm';
+import ConfirmModal from './ConfirmModal';
 
 class CommentListItem extends Component {
 

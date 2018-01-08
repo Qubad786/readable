@@ -5,7 +5,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Item, Label, Icon, Button } from 'semantic-ui-react';
 import moment from 'moment';
 import Vote from './Vote';
-import ConfirmModal from './ConfirmModal'
+import ConfirmModal from './ConfirmModal';
 
 class PostListItem extends Component {
 

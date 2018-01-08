@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getComments, voteComment } from '../actions';
 import { Comment, Divider } from 'semantic-ui-react';
-import CommentListItem from './CommentListItem'
-import CommentModalForm from './CommentModalForm'
-import NotFound from './NotFound'
+import CommentListItem from './CommentListItem';
+import CommentModalForm from './CommentModalForm';
+import NotFound from './NotFound';
 
 class CommentList extends Component {
 
