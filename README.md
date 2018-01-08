@@ -6,7 +6,7 @@ posts and comments.
 
 ## Getting Started
 
-To run, test and develop Readable on your local computer:
+Following are the steps to test/develop Readable:
 
 1. Fork, clone or download this repository
 
@@ -30,19 +30,17 @@ readable app.
 
 The Readable user interface is built using [React](https://reactjs.org/) while
 state management is handled by [Redux](https://redux.js.org/). Other
-tools/frameworks used in the project include:
+tools/frameworks/middlewares used in the project include:
 
 * [React Router](https://reacttraining.com/react-router/) for routing
 * [Semantic UI React](https://react.semantic-ui.com/introduction) for UI
   components
 * [Redux Thunk](https://github.com/gaearon/redux-thunk) for asynchronous Redux
   actions
+* [Moment.js](https://momentjs.com/) for formatting and displaying timestamps
 * [uuid](https://github.com/kelektiv/node-uuid) for generating post and comment
   IDs
-* [Moment.js](https://momentjs.com/) for formatting and displaying timestamps
-* [Prettier](https://prettier.io/) for code formatting
 
 ## API Server
 
-Information about the API server and how to use it can be found in its
-[README file](api-server/README.md).
+More information on the Backend Server can be found in [README file](api-server/README.md).
