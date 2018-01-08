@@ -4,24 +4,24 @@ Readable is a Blog. Users are able to post content to predefined categories,
 they can comment on posts, vote on posts and comments. They can also edit/delete
 posts and comments.
 
-## Running the App
+## Getting Started
 
 To run, test and develop Readable on your local computer:
 
-# Fork, clone or download this repository
+1. Fork, clone or download this repository
 
-# Install and start back-end server.
+1. Install and start back-end server.
 
-   # `cd api-server`
-   # `npm install`
-   # `node server`
+   1. `cd api-server`
+   1. `npm install`
+   1. `node server`
 
-# In another terminal window, do the following to start and run the
+1. In another terminal window, do the following to start and run the
 readable app.
 
-   # `cd frontend`
-   # `npm install`
-   # `npm start`
+   1. `cd frontend`
+   1. `npm install`
+   1. `npm start`
 
 1. A browser window should open automatically, or you can load the app at
    http://localhost:3000
