@@ -43,4 +43,4 @@ tools/frameworks/middlewares used in the project include:
 
 ## API Server
 
-More information on the Backend Server can be found in [README file](api-server/README.md).
+More information on the Backend Server can be found [here](api-server/README.md).
