@@ -9,7 +9,7 @@ import NotFound from './NotFound'
 class CommentList extends Component {
 
   componentDidMount = () => {
-    this.props.getComments(this.props.post_id);
+    this.props.getComments(this.props.postID);
   };
 
   handleVote = (comment, vote) => (
@@ -17,7 +17,7 @@ class CommentList extends Component {
   );
 
   render() {
-    const { comments, post_id } = this.props;
+    const { comments, postID } = this.props;
 
     return (
       <Comment.Group>
@@ -26,6 +26,7 @@ class CommentList extends Component {
           comments.map(comment => (
             <CommentListItem
               key={comment.id}
+              postID={postID}
               comment={comment}
               handleVote={this.handleVote}
             />
@@ -34,7 +35,7 @@ class CommentList extends Component {
           <NotFound title='There are no comments on this post. Be the first to leave one!' />
         )}
         <Divider />
-        <CommentModalForm post_id={post_id} />
+        <CommentModalForm postID={postID} />
       </Comment.Group>
     );
   }

@@ -17,9 +17,9 @@ export function posts(posts = [], action) {
     case RECEIVE_POST:
     case POST_UPDATED:
     case POST_VOTED:
-        return posts.filter(post => (
-          post.id !== action.data.id
-        )).concat(action.data);
+        return posts.map(post => (
+          post.id === action.data.id ? action.data : post
+        ))
     case POST_DELETED:
       return posts.filter(post => post.id !== action.data.id);
     default:

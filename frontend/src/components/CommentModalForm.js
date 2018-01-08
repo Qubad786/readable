@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addComment, updateComment } from '../actions';
+import { getPost, addComment, updateComment } from '../actions';
 import { Modal, Form, Button } from 'semantic-ui-react';
 import { v4 } from 'uuid';
 
@@ -10,6 +10,13 @@ class CommentModalForm extends Component {
     author: '',
     body: '',
     modalOpen: false
+  };
+
+  componentDidMount = () => {
+    this.setState(state => ({
+      author: this.props.comment ? this.props.comment.author : state.author,
+      body: this.props.comment ? this.props.comment.body : state.body
+    }));
   };
 
   handleModalOpen = () => {
@@ -27,11 +34,12 @@ class CommentModalForm extends Component {
   handleModalSubmit = e => {
     e.preventDefault();
     const { author, body } = this.state;
+    const { postID, comment } = this.props;
 
     // Check whether editing a comment or creating a new one
-    if (this.props.comment) {
+    if (comment) {
       this.props.updateComment({
-        ...this.props.comment,
+        ...comment,
         timestamp: Date.now(),
         author,
         body
@@ -39,19 +47,19 @@ class CommentModalForm extends Component {
     } else {
       this.props.addComment({
         id: v4(),
-        parentId: this.props.post_id,
+        parentId: postID,
         timestamp: Date.now(),
         body,
         author,
       });
+      // To retrieve post's latest comments count
+      this.props.getPost(postID)
     }
 
     // Reset the form state after submission
     this.setState({
-      comment: {
-        author: '',
-        body: ''
-      },
+      author: '',
+      body: '',
       modalOpen: false
     });
   };
@@ -61,13 +69,6 @@ class CommentModalForm extends Component {
         ...prevState,
         [v.name]: v.value
       }));
-  };
-
-  componentDidMount = () => {
-    this.setState({
-      author: this.props.comment ? this.props.comment.author : '',
-      body: this.props.comment ? this.props.comment.body : ''
-    });
   };
 
   render() {
@@ -121,4 +122,8 @@ class CommentModalForm extends Component {
   }
 }
 
-export default connect(null, { updateComment, addComment })(CommentModalForm);
+export default connect(null, {
+  getPost,
+  addComment,
+  updateComment
+})(CommentModalForm);

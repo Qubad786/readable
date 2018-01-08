@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Comment, Button } from 'semantic-ui-react';
 import moment from 'moment';
-import { deleteComment } from '../actions'
+import { getPost, deleteComment } from '../actions'
 import Vote from './Vote';
 import CommentModalForm from './CommentModalForm'
 import ConfirmModal from './ConfirmModal'
@@ -14,8 +14,11 @@ class CommentListItem extends Component {
   }
 
   handleCommentDeletion = () => {
-    this.props.deleteComment(this.props.comment);
+    const { postID, comment } = this.props;
+    this.props.deleteComment(comment);
     this.setState({ modalOpen: false });
+    // To retrieve post's latest comments count
+    this.props.getPost(postID)
   };
 
   handleModalOpen = () => {
@@ -56,4 +59,4 @@ class CommentListItem extends Component {
   }
 }
 
-export default connect(null, { deleteComment })(CommentListItem);
+export default connect(null, { getPost, deleteComment })(CommentListItem);

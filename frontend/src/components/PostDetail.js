@@ -16,6 +16,7 @@ class PostDetail extends Component {
 
   render() {
     const { post } = this.props;
+
     return (
       post ?
       <Grid.Column width={11}>
@@ -26,7 +27,7 @@ class PostDetail extends Component {
           handleVote={this.handleVote}
         />
         <Header>Comments</Header>
-        <CommentList post_id={post.id} />
+        <CommentList postID={post.id} />
       </Grid.Column>
       :
       <NotFound title='Post Not Found.'/>
